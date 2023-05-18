@@ -1,18 +1,27 @@
-name: Docker Image CI
+name: publish
 
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+
+on: [push]
+
 
 jobs:
 
-  build:
+  publish-back-image:
 
     runs-on: ubuntu-latest
 
+
     steps:
-    - uses: actions/checkout@v3
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+
+    - uses: actions/checkout@v2
+
+
+    - name: Build the back Docker image
+
+      run: |
+
+        echo $CR_PAT | docker login ghcr.io -u tigrohvost --password-stdin
+
+      env:
+
+        CR_PAT: ${{ secrets.CR_PAT }}
