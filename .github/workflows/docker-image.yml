@@ -1,27 +1,14 @@
 name: publish
 
-
 on: [push]
 
-
 jobs:
-
   publish-back-image:
-
     runs-on: ubuntu-latest
-
-
     steps:
-
     - uses: actions/checkout@v2
-
-
     - name: Build the back Docker image
-
       run: |
-
         echo $CR_PAT | docker login ghcr.io -u tigrohvost --password-stdin
-
       env:
-
         CR_PAT: ${{ secrets.CR_PAT }}
