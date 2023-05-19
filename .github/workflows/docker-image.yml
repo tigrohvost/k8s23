@@ -10,8 +10,11 @@ jobs:
     - name: Build the back Docker image
       run: |
         echo $CR_PAT | docker login ghcr.io -u tigrohvost --password-stdin
-        docker build . --tag ghcr.io/tigrohvost/back:latest
-        docker run ghcr.io/tigrohvost/back:latest
-        docker push ghcr.io/tigrohvost/back:latest
       env:
         CR_PAT: ${{ secrets.CR_PAT }}
+    -
+        name: Build and push
+        uses: docker/build-push-action@v4
+        with:
+          push: true
+          tags: ghcr.io/tigrohvost/back
