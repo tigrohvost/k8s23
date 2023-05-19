@@ -17,7 +17,7 @@ spec:
       containers:
       - name: back
         #image: tigrohvost/back
-        image: ghcr.io/tigrohvost/back:v1
+        image: ghcr.io/tigrohvost/back:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 5000
