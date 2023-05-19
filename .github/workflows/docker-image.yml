@@ -16,5 +16,7 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v4
         with:
+          context: back
+          file: components/back/Dockerfile
           push: true
           tags: ghcr.io/tigrohvost/back
