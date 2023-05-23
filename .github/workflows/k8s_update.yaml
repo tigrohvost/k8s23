@@ -12,4 +12,4 @@ jobs:
         base64-kube-config: ${{ secrets.KUBE_CONFIG }}
     - run: |
         curl -sSL https://hub.mcs.mail.ru/repository/client-keystone-auth/latest/linux/client-install.sh | bash
-        kubectl get pods
+        echo 'aaa'
