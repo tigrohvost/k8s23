@@ -20,10 +20,18 @@ jobs:
       env:
         CR_PAT: ${{ secrets.CR_PAT }}
     -
-        name: Build and push
+        name: Build and push back
         uses: docker/build-push-action@v4
         with:
           context: ./components/back
           push: true
           tags: ghcr.io/tigrohvost/back:latest
+
+    -
+        name: Build and push front
+        uses: docker/build-push-action@v4
+        with:
+          context: ./components/front
+          push: true
+          tags: ghcr.io/tigrohvost/front:latest
 
