@@ -10,4 +10,7 @@ jobs:
     - uses: tale/kubectl-action@v1
       with:
         base64-kube-config: ${{ secrets.KUBE_CONFIG }}
-    - run: kubectl get pods
+    - run: |
+        curl -sSL https://hub.mcs.mail.ru/repository/client-keystone-auth/latest/linux/client-install.sh | bash
+        source "/home/runner/.bashrc"
+        kubectl get pods
