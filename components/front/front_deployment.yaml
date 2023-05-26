@@ -16,7 +16,6 @@ spec:
     spec:
       containers:
       - name: front
-        #image: tigrohvost/back
         image: ghcr.io/tigrohvost/front:latest
         imagePullPolicy: Always
         ports:

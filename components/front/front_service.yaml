@@ -3,13 +3,10 @@ kind: Service
 metadata:
   name: front
 spec:
-  selector:
-    app: front
   type: LoadBalancer
   ports:
-  - protocol: TCP
-    port: 5000
+  - port: 80
+    protocol: TCP
     targetPort: 5000
-    #nodePort: 31111
   selector:
     app: front

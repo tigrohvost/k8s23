@@ -11,6 +11,4 @@ spec:
     port: 5000
     targetPort: 5000
     #nodePort: 31110
-  selector:
-    app: back
 
