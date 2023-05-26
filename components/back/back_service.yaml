@@ -5,10 +5,8 @@ metadata:
 spec:
   selector:
     app: back
-  #type: LoadBalancer
   ports:
   - protocol: TCP
     port: 5000
     targetPort: 5000
-    #nodePort: 31110
 
